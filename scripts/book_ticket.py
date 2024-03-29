@@ -60,7 +60,7 @@ def is_avail(info):
 def select_event():
     file_path = os.path.join("csv_files", "event_data.csv")
     df = pd.read_csv(file_path)
-    put_table(df.to_dict(orient='records'))
+    put_scrollable(put_table(df.to_dict(orient='records')),height=200)
     info = input_group("Booking details:", inputs=[
         input("Event ID:", name='ID', type=NUMBER, required=True),
         input("Number of tickets", name='num', type=NUMBER, required=True)

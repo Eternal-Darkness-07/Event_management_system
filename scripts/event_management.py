@@ -17,7 +17,7 @@ def see_booking():
     file_path = os.path.join("csv_files", name + time + "_booking.csv")
     
     df = pd.read_csv(file_path)
-    put_table(df.to_dict(orient='records'))
+    put_scrollable(put_table(df.to_dict(orient='records')), height=400)
     go_to_login = actions("Do you want to login again?", ['Yes'])
     
     if go_to_login == 'Yes':

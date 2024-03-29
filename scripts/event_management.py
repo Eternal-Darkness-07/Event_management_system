@@ -34,6 +34,7 @@ def create():
         input("Ending date & time", name="end", type=DATETIME, required=True, placeholder="Enter the date and time"),
         input("Price of a ticket", name="price", type=NUMBER, required=True, placeholder="Enter the price of ticket")
     ])
+    
     file_path = os.path.join("csv_files","event_data.csv")
     with open(file_path, 'a', newline='') as file:
         writer = csv.writer(file)
